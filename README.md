@@ -1,6 +1,6 @@
 # Adjusting for Autocorrelated Errors in Neural Networks for Time Series
 
-This repository is the official implementation of the paper "Adjusting for Autocorrelated Errors in Neural Networks for Time Series" [(arXiv link)](https://arxiv.org/abs/2101.12578).
+This repository is the official implementation of the paper "Adjusting for Autocorrelated Errors in Neural Networks for Time Series" ([arXiv link](https://arxiv.org/abs/2101.12578)).
 
 For simplicity, we only provide the code for time series forecasting.
 However, it is straightforward to implement our method with other models on other time series tasks as described in the appendix of the paper.
@@ -30,9 +30,9 @@ Example commands can be found in `run.sh`.
 
 ```
 @inproceedings{sun2021adjusting,
-	title={Adjusting for Autocorrelated Errors in Neural Networks for Time Series Regression and Forecasting}, 
+    title={Adjusting for Autocorrelated Errors in Neural Networks for Time Series Regression and Forecasting}, 
     author={Fan-Keng Sun and Christopher I. Lang and Duane S. Boning},
-	booktitle = {Advances in Neural Information Processing Systems},
+    booktitle = {Advances in Neural Information Processing Systems},
     year={2021},
 }
 ```
