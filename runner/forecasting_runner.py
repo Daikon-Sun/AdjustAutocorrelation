@@ -81,7 +81,7 @@ class forecastingRunner(Runner):
                 x = x.to(args.device)
                 y = y.to(args.device)
                 rho = torch.tanh(self.rho)
-
+                ##
                 if args.inp_adj:
                     x = torch.cat([avg[None].repeat(bs, 1, 1), x], dim=1)
                     x = x[:, 1:] - rho * x[:, :-1]
@@ -90,7 +90,7 @@ class forecastingRunner(Runner):
                     prd_y += rho * x[:, -1]
                 loss = self.criterion(y, prd_y)
                 epoch_loss += loss.item() * bs
-
+                ##
                 epoch_err += torch.sum((y*sc - prd_y*sc)**2).item()
 
                 if mode == 0:
