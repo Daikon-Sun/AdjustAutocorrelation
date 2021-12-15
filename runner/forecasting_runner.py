@@ -83,9 +83,11 @@ class forecastingRunner(Runner):
                 rho = torch.tanh(self.rho)
 
                 if args.inp_adj:
-                    x = torch.cat([avg[None].repeat(bs, 1, 1), x], dim=1)
-                    x = x[:, 1:] - rho * x[:, :-1]
-                prd_y = self.model(x)
+                    inp = torch.cat([avg[None].repeat(bs, 1, 1), x], dim=1)
+                    inp = inp[:, 1:] - rho * inp[:, :-1]
+                else:
+                    inp = x
+                prd_y = self.model(inp)
                 if args.out_adj:
                     prd_y += rho * x[:, -1]
                 loss = self.criterion(y, prd_y)
